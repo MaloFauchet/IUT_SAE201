@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lepatio.sae.IHM_Reservation.CtrlListeReservations">
+   <children>
+      <TableView fx:id="tvListeReservations" prefWidth="200.0">
+        <columns>
+            <TableColumn editable="false" prefWidth="75.0" sortable="false" text="Nom" />
+          <TableColumn editable="false" prefWidth="75.0" sortable="false" text="Prénom" />
+          <TableColumn editable="false" prefWidth="101.5999755859375" sortable="false" text="Spectacle" />
+            <TableColumn editable="false" prefWidth="57.5999755859375" sortable="false" text="Date" />
+            <TableColumn editable="false" prefWidth="73.5999755859375" sortable="false" text="Zone" />
+            <TableColumn editable="false" prefWidth="73.5999755859375" sortable="false" text="Rangée" />
+            <TableColumn editable="false" prefWidth="79.9998779296875" sortable="false" text="Num Place" />
+            <TableColumn editable="false" minWidth="7.20001220703125" prefWidth="54.399932861328125" sortable="false" text="Adulte" />
+            <TableColumn editable="false" minWidth="7.20001220703125" prefWidth="55.20001220703125" sortable="false" text="Abonné" />
+            <TableColumn editable="false" minWidth="7.20001220703125" prefWidth="66.39996337890625" sortable="false" text="Sénior" />
+            <TableColumn editable="false" minWidth="7.20001220703125" prefWidth="59.99993896484375" sortable="false" text="Jeune" />
+            <TableColumn editable="false" minWidth="7.20001220703125" prefWidth="74.39987182617188" sortable="false" text="Total" />
+        </columns>
+      </TableView>
+      <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+         <children>
+            <Button fx:id="bnValider" defaultButton="true" mnemonicParsing="false" onAction="#clickValider" prefWidth="80.0" text="Valider">
+               <HBox.margin>
+                  <Insets left="217.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="bnAnnuler" cancelButton="true" mnemonicParsing="false" onAction="#clickAnnuler" prefWidth="80.0" text="Annuler" />
+         </children>
+      </HBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+   </padding>
+</VBox>

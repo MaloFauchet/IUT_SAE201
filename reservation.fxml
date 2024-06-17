@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane minHeight="-Infinity" minWidth="-Infinity" prefHeight="520.0" prefWidth="620.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lepatio.sae.IHM_Reservation.CtrlReservation">
+   <bottom>
+      <HBox alignment="CENTER_RIGHT" prefHeight="75.0" prefWidth="200.0" spacing="20.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="bnValider" defaultButton="true" disable="true" mnemonicParsing="false" onAction="#ValiderReservation" text="Valider" />
+            <Button fx:id="bnAnnuler" cancelButton="true" mnemonicParsing="false" onAction="#fermerReservation" text="Annuler" />
+         </children>
+         <padding>
+            <Insets left="10.0" right="10.0" />
+         </padding>
+      </HBox>
+   </bottom>
+   <center>
+      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Renseigner le client* : ">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="txtNomClient" promptText="Nom du client" />
+                  <TextField fx:id="txtVilleClient" promptText="Ville du client" />
+                  <Button fx:id="bnConfirmerClient" mnemonicParsing="false" onAction="#ChercherClient" prefWidth="100.0" text="Confirmer">
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            <Label fx:id="lbClientTrouve">
+               <VBox.margin>
+                  <Insets left="20.0" />
+               </VBox.margin>
+            </Label>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Choisir une représentation* : " />
+                  <ChoiceBox fx:id="cbRepresentation" prefWidth="150.0" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Choisir une date* : " />
+                  <DatePicker fx:id="datePicker" prefHeight="25.0" prefWidth="120.0" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <Label text="Choisir une zone* : " />
+                  <RadioButton fx:id="rbLogesGauches" mnemonicParsing="false" text="Loges Gauches">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rbGroupZone" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbBalcon" mnemonicParsing="false" text="Balcon" toggleGroup="$rbGroupZone" />
+                  <RadioButton fx:id="rbOrchestre" mnemonicParsing="false" text="Orchestre" toggleGroup="$rbGroupZone" />
+                  <RadioButton fx:id="rbLogesDroites" mnemonicParsing="false" text="Loges Droites" toggleGroup="$rbGroupZone" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
+               </padding>
+            </HBox>
+            <VBox prefHeight="200.0" prefWidth="100.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+                     <padding>
+                        <Insets bottom="20.0" left="20.0" right="20.0" top="10.0" />
+                     </padding>
+                     <children>
+                        <Label alignment="CENTER" text="Choisir un emplacement : ">
+                           <padding>
+                              <Insets right="30.0" />
+                           </padding>
+                        </Label>
+                        <Label text="Rangée : " />
+                        <TextField fx:id="txtRangee" prefWidth="50.0" promptText="A, ..." />
+                        <Label text="N° de place" />
+                        <TextField fx:id="txtNumeroPlace" prefWidth="50.0" promptText="1, ..." />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <GridPane prefHeight="1000.0" prefWidth="100.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="203.0" minWidth="10.0" prefWidth="190.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="60.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="0.0" prefWidth="43.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="190.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="50.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="180.0" minWidth="10.0" prefWidth="68.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <TextField fx:id="txtNbPlaceAdulte" prefHeight="25.0" prefWidth="50.0" text="0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Nombre de place Adulte : " />
+                  <TextField fx:id="txtNbPlaceAbonne" prefHeight="25.0" prefWidth="50.0" text="0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Nombre de place Abonné : " GridPane.columnIndex="3" />
+                  <TextField fx:id="txtNbPlaceSenior" prefHeight="25.0" prefWidth="50.0" text="0" GridPane.columnIndex="1" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Nombre de place Sénior : " GridPane.rowIndex="1" />
+                  <TextField fx:id="txtNbPlaceJeune" prefHeight="25.0" prefWidth="50.0" text="0" GridPane.columnIndex="4" GridPane.hgrow="NEVER" GridPane.rowIndex="1" GridPane.vgrow="NEVER">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <Label text="Nombre de place Jeune : " GridPane.columnIndex="3" GridPane.rowIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets left="20.0" right="20.0" />
+               </VBox.margin>
+            </GridPane>
+         </children>
+      </VBox>
+   </center>
+   <top>
+      <Label text="Création d'une réservation" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets bottom="30.0" top="20.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+</BorderPane>
